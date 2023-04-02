@@ -1,0 +1,697 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "autoname": "naming_series:",
+ "creation": "2021-06-24 12:11:22.557561",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "status",
+  "workshop",
+  "use_spare_not_item",
+  "column_break_6",
+  "receiving_datetime",
+  "naming_series",
+  "company",
+  "section_break_7",
+  "service_item_doctype",
+  "service_item_name",
+  "customer",
+  "mobile_no",
+  "vehicle_model",
+  "driver_name",
+  "driver_mobile_number",
+  "column_break_11",
+  "make",
+  "type",
+  "engine_number",
+  "chassis_number",
+  "odometer_reading",
+  "vin",
+  "section_break_11",
+  "complains",
+  "section_break_13",
+  "faults",
+  "section_break_15",
+  "services",
+  "section_break_17",
+  "tasks",
+  "section_break_26",
+  "parts",
+  "supplied_parts",
+  "unbill_item",
+  "section_break_31",
+  "invoice",
+  "column_break_38",
+  "service_charges",
+  "spares_cost",
+  "total",
+  "amended_from",
+  "route",
+  "section_break_41",
+  "service_book",
+  "cigar_lighter",
+  "first_aid",
+  "clock",
+  "gear_lock",
+  "tyre_stopper",
+  "tarpaulin",
+  "fog_lamps",
+  "column_break_44",
+  "fire_extinguisher",
+  "mobile_charger",
+  "cargo_belt",
+  "tool_kit",
+  "jock",
+  "pressure_pipe",
+  "helmet",
+  "section_break_43",
+  "battery_make",
+  "battery_no",
+  "battery_condition_column",
+  "excellent",
+  "good",
+  "poor",
+  "tyre_details_section",
+  "front_left",
+  "axle_1_rear_left",
+  "axle_2_rear_left",
+  "trailer_axle_left_1and2",
+  "trailer_axle_2_left_1and2",
+  "trailer_axle_3_left_1and2",
+  "spare_wheel_1",
+  "note_section",
+  "section_break_82",
+  "data_83",
+  "column_break_71",
+  "front_right",
+  "axle_1_rear_right",
+  "axle2_rear_right_t_1_and_2",
+  "trailer_axle_right_1_and_2",
+  "trailer_axle_2_right_1_and_2",
+  "trailer_axle_3_right_1_and_2",
+  "spare_wheel_2",
+  "section_break_83",
+  "driver_verbatin_column",
+  "text_83",
+  "service_advisor_instructor_column",
+  "section_break_89",
+  "parts_description",
+  "column_break_91",
+  "parts_no",
+  "column_break_93",
+  "total_estimated"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "SJC-.YY.-.######"
+  },
+  {
+   "default": "Initiated",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Initiated\nActive\nInspection\nRepairing\nAwaiting Parts\nCompleted\nClosed",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "workshop.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "workshop",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Workshop",
+   "options": "Service Workshop",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_item_doctype",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Service Item Doctype"
+  },
+  {
+   "fieldname": "service_item_name",
+   "fieldtype": "Link",
+   "label": "Service Item Name",
+   "options": "Service Vehicle",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "service_item_name.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "receiving_datetime",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Receiving DateTime",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "complains",
+   "fieldtype": "Table",
+   "label": "Complains",
+   "options": "Complains",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "faults",
+   "fieldtype": "Table",
+   "label": "Faults",
+   "options": "Faults"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_17",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "service_item_name.vehicle_model",
+   "fieldname": "vehicle_model",
+   "fieldtype": "Data",
+   "label": "Vehicle Model",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "service_item_name.make",
+   "fieldname": "make",
+   "fieldtype": "Data",
+   "label": "Make",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "service_item_name.type",
+   "fieldname": "type",
+   "fieldtype": "Data",
+   "label": "Type",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "service_item_name.engine_number",
+   "fieldname": "engine_number",
+   "fieldtype": "Data",
+   "label": "Engine Number",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "service_item_name.chassis_number",
+   "fieldname": "chassis_number",
+   "fieldtype": "Data",
+   "label": "Chassis Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_26",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "service_charges",
+   "fieldtype": "Currency",
+   "label": "Service Charges",
+   "read_only": 1
+  },
+  {
+   "fieldname": "spares_cost",
+   "fieldtype": "Currency",
+   "label": "Spares Cost",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total Excl. Vat",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_38",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_31",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "invoice",
+   "fieldtype": "Link",
+   "label": "Invoice Number",
+   "options": "Sales Invoice"
+  },
+  {
+   "fieldname": "services",
+   "fieldtype": "Table",
+   "label": "Service Task Templates",
+   "options": "Job Card Template",
+   "reqd": 1
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "parts",
+   "fieldtype": "Table",
+   "label": "Parts and Consumable Supplied",
+   "options": "Job Card Items Supplied"
+  },
+  {
+   "fieldname": "tasks",
+   "fieldtype": "Table",
+   "label": "Task",
+   "options": "Job Card Tasks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Service Job Card",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "fetch_from": "customer.mobile_no",
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "supplied_parts",
+   "fieldtype": "Table",
+   "label": "Supplied Parts",
+   "options": "Supplied Parts",
+   "read_only": 1
+  },
+  {
+   "fieldname": "unbill_item",
+   "fieldtype": "Button",
+   "label": "Unbill Item",
+   "permlevel": 1
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name"
+  },
+  {
+   "fieldname": "driver_mobile_number",
+   "fieldtype": "Data",
+   "label": "Driver Mobile Number",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "odometer_reading",
+   "fieldtype": "Data",
+   "label": "Odometer Reading"
+  },
+  {
+   "fieldname": "section_break_41",
+   "fieldtype": "Section Break",
+   "label": "Pre Acceptance Inspection"
+  },
+  {
+   "fieldname": "section_break_43",
+   "fieldtype": "Section Break",
+   "label": "Battery Details"
+  },
+  {
+   "fetch_from": "service_item_name.vin",
+   "fieldname": "vin",
+   "fieldtype": "Data",
+   "label": "VIN",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "service_book",
+   "fieldtype": "Check",
+   "label": "Service Book"
+  },
+  {
+   "fieldname": "column_break_44",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "fire_extinguisher",
+   "fieldtype": "Check",
+   "label": "Fire Extinguisher"
+  },
+  {
+   "fieldname": "battery_make",
+   "fieldtype": "Data",
+   "label": "Battery Make"
+  },
+  {
+   "fieldname": "battery_no",
+   "fieldtype": "Data",
+   "label": "Battery No"
+  },
+  {
+   "fieldname": "tyre_details_section",
+   "fieldtype": "Section Break",
+   "label": "Tyre Details"
+  },
+  {
+   "fieldname": "front_right",
+   "fieldtype": "Select",
+   "label": "Front Right",
+   "options": "\nAbove 10 mm\nAround 7 mm\nLess than 2.6 mm"
+  },
+  {
+   "fieldname": "front_left",
+   "fieldtype": "Select",
+   "label": "Front Left",
+   "options": "\nAbove 10 mm\nAround 7 mm\nLess than 2.6 mm"
+  },
+  {
+   "fieldname": "axle_1_rear_right",
+   "fieldtype": "Select",
+   "label": "AXLE 1 REAR RIGHT T 1 AND 2",
+   "options": "\nAbove 10 mm\nAround 7 mm\nLess than 2.6 mm"
+  },
+  {
+   "fieldname": "axle_1_rear_left",
+   "fieldtype": "Select",
+   "label": "AXLE 1 REAR LEFT T 1  AND 2",
+   "options": "\nAbove 10 mm\nAround 7 mm\nLess than 2.6 mm"
+  },
+  {
+   "fieldname": "axle_2_rear_left",
+   "fieldtype": "Select",
+   "label": "AXLE 2 REAR LEFT T 1 AND 2",
+   "options": "\nAbove 10 mm\nAround 7 mm\nLess than 2.6 mm"
+  },
+  {
+   "fieldname": "spare_wheel_1",
+   "fieldtype": "Select",
+   "label": "Spare Wheel 1",
+   "options": "\nAbove 10 mm\nAround 7 mm\nLess than 2.6 mm"
+  },
+  {
+   "fieldname": "spare_wheel_2",
+   "fieldtype": "Select",
+   "label": "Spare Wheel 2",
+   "options": "\nAbove 10 mm\nAround 7 mm\nLess than 2.6 mm"
+  },
+  {
+   "default": "0",
+   "fieldname": "cigar_lighter",
+   "fieldtype": "Check",
+   "label": "Cigar Lighter"
+  },
+  {
+   "default": "0",
+   "fieldname": "first_aid",
+   "fieldtype": "Check",
+   "label": "First aid"
+  },
+  {
+   "default": "0",
+   "fieldname": "clock",
+   "fieldtype": "Check",
+   "label": "Clock"
+  },
+  {
+   "default": "0",
+   "fieldname": "gear_lock",
+   "fieldtype": "Check",
+   "label": "Gear Lock"
+  },
+  {
+   "default": "0",
+   "fieldname": "tyre_stopper",
+   "fieldtype": "Check",
+   "label": "Tyre stopper"
+  },
+  {
+   "default": "0",
+   "fieldname": "tarpaulin",
+   "fieldtype": "Check",
+   "label": "Tarpaulin"
+  },
+  {
+   "default": "0",
+   "fieldname": "fog_lamps",
+   "fieldtype": "Check",
+   "label": "Fog Lamp"
+  },
+  {
+   "default": "0",
+   "fieldname": "mobile_charger",
+   "fieldtype": "Check",
+   "label": "Mobile Charger"
+  },
+  {
+   "default": "0",
+   "fieldname": "cargo_belt",
+   "fieldtype": "Check",
+   "label": "Cargo belt"
+  },
+  {
+   "default": "0",
+   "fieldname": "tool_kit",
+   "fieldtype": "Check",
+   "label": "Tool Kit"
+  },
+  {
+   "default": "0",
+   "fieldname": "jock",
+   "fieldtype": "Check",
+   "label": "Jock"
+  },
+  {
+   "default": "0",
+   "fieldname": "pressure_pipe",
+   "fieldtype": "Check",
+   "label": "Pressure pipe"
+  },
+  {
+   "default": "0",
+   "fieldname": "helmet",
+   "fieldtype": "Check",
+   "label": "Helmet"
+  },
+  {
+   "bold": 1,
+   "fieldname": "battery_condition_column",
+   "fieldtype": "Column Break",
+   "label": "Battery Condition"
+  },
+  {
+   "default": "0",
+   "fieldname": "excellent",
+   "fieldtype": "Check",
+   "label": "Excellent"
+  },
+  {
+   "default": "0",
+   "fieldname": "good",
+   "fieldtype": "Check",
+   "label": "Good"
+  },
+  {
+   "default": "0",
+   "fieldname": "poor",
+   "fieldtype": "Check",
+   "label": "Poor"
+  },
+  {
+   "fieldname": "note_section",
+   "fieldtype": "Read Only",
+   "label": "Note To Measure Tyre tread use Tread DepthGuage"
+  },
+  {
+   "bold": 1,
+   "fieldname": "driver_verbatin_column",
+   "fieldtype": "Small Text",
+   "label": "Driver Verbatin"
+  },
+  {
+   "fieldname": "service_advisor_instructor_column",
+   "fieldtype": "Small Text",
+   "label": "Service Advisor Instructor"
+  },
+  {
+   "fieldname": "text_83",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "section_break_82",
+   "fieldtype": "Heading",
+   "label": "Remark/Vehicles diagnosis report"
+  },
+  {
+   "fieldname": "section_break_83",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "data_83",
+   "fieldtype": "Data"
+  },
+  {
+   "fieldname": "column_break_71",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "trailer_axle_left_1and2",
+   "fieldtype": "Select",
+   "label": "TRAILER AXLE LEFT 1 AND 2",
+   "options": "\nAbove 10 mm\nAround 7 mm\nLess than 2.6 mm"
+  },
+  {
+   "fieldname": "trailer_axle_2_left_1and2",
+   "fieldtype": "Select",
+   "label": "TRAILER AXLE 2 LEFT 1 AND 2",
+   "options": "\nAbove 10 mm\nAround 7 mm\nLess than 2.6 mm"
+  },
+  {
+   "fieldname": "trailer_axle_3_left_1and2",
+   "fieldtype": "Select",
+   "label": "TRAILER AXLE 3 LEFT 1 AND 2",
+   "options": "\nAbove 10 mm\nAround 7 mm\nLess than 2.6 mm"
+  },
+  {
+   "fieldname": "axle2_rear_right_t_1_and_2",
+   "fieldtype": "Select",
+   "label": "AXLE2 REAR RIGHT T 1 AND 2",
+   "options": "\nAbove 10 mm\nAround 7 mm\nLess than 2.6 mm"
+  },
+  {
+   "fieldname": "trailer_axle_right_1_and_2",
+   "fieldtype": "Select",
+   "label": "TRAILER AXLE RIGHT 1 AND 2",
+   "options": "\nAbove 10 mm\nAround 7 mm\nLess than 2.6 mm"
+  },
+  {
+   "fieldname": "trailer_axle_2_right_1_and_2",
+   "fieldtype": "Select",
+   "label": "TRAILER AXLE 2 RIGHT 1 AND 2",
+   "options": "\nAbove 10 mm\nAround 7 mm\nLess than 2.6 mm"
+  },
+  {
+   "fieldname": "trailer_axle_3_right_1_and_2",
+   "fieldtype": "Select",
+   "label": "TRAILER AXLE 3 RIGHT 1 AND 2",
+   "options": "\nAbove 10 mm\nAround 7 mm\nLess than 2.6 mm"
+  },
+  {
+   "fieldname": "section_break_89",
+   "fieldtype": "Section Break",
+   "label": "Estimated Repair"
+  },
+  {
+   "bold": 1,
+   "fieldname": "parts_description",
+   "fieldtype": "Small Text",
+   "label": "Part Description"
+  },
+  {
+   "fieldname": "column_break_91",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "parts_no",
+   "fieldtype": "Small Text",
+   "label": "Part No"
+  },
+  {
+   "fieldname": "column_break_93",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fetch_from": "workshop.use_spare_not_item",
+   "fieldname": "use_spare_not_item",
+   "fieldtype": "Check",
+   "label": "Use Spare Not Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_estimated",
+   "fieldtype": "Currency",
+   "label": "Total"
+  }
+ ],
+ "has_web_view": 1,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Sales Invoice",
+   "link_fieldname": "service_job_card"
+  }
+ ],
+ "modified": "2022-11-29 12:50:03.913615",
+ "modified_by": "Administrator",
+ "module": "Service Management",
+ "name": "Service Job Card",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "route": "job-card",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

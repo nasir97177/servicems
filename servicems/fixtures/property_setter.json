@@ -1,0 +1,43 @@
+[
+    {
+        "name": "Sales Invoice-main-links_order",
+        "creation": "2021-11-10 09:29:39.655396",
+        "modified": "2021-11-10 09:29:39.655396",
+        "idx": 0,
+        "docstatus": 0,
+        "doctype_or_field": "DocType",
+        "doc_type": "Sales Invoice",
+        "property": "links_order",
+        "property_type": "Small Text",
+        "value": "[\"15939ada81\", \"e866221bd8\"]",
+        "doctype": "Property Setter"
+    },
+    {
+        "name": "Sales Invoice-update_stock-read_only",
+        "creation": "2021-11-10 09:05:47.845372",
+        "modified": "2021-11-10 09:05:47.845372",
+        "idx": 0,
+        "docstatus": 0,
+        "doctype_or_field": "DocField",
+        "doc_type": "Sales Invoice",
+        "field_name": "update_stock",
+        "property": "read_only",
+        "property_type": "Check",
+        "value": "1",
+        "doctype": "Property Setter"
+    },
+    {
+        "name": "Sales Invoice-update_stock-read_only_depends_on",
+        "creation": "2021-11-10 11:47:18.192475",
+        "modified": "2021-11-10 11:47:18.192475",
+        "idx": 0,
+        "docstatus": 0,
+        "doctype_or_field": "DocField",
+        "doc_type": "Sales Invoice",
+        "field_name": "update_stock",
+        "property": "read_only_depends_on",
+        "property_type": "Data",
+        "value": "eval:doc.service_job_card",
+        "doctype": "Property Setter"
+    }
+]

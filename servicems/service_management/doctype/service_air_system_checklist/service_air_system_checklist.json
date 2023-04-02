@@ -1,0 +1,38 @@
+{
+ "actions": [],
+ "creation": "2022-04-03 19:26:41.729613",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "part",
+  "mark"
+ ],
+ "fields": [
+  {
+   "fieldname": "part",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Part"
+  },
+  {
+   "default": "0",
+   "fieldname": "mark",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Mark"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2022-04-03 19:26:41.729613",
+ "modified_by": "Administrator",
+ "module": "Service Management",
+ "name": "Service Air System Checklist",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

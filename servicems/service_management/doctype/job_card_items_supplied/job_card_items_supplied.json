@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "creation": "2021-06-10 18:32:44.004555",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "item",
+  "spare",
+  "qty",
+  "rate",
+  "is_billable"
+ ],
+ "fields": [
+  {
+   "depends_on": "eval: !parent.use_spare_not_item;",
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "mandatory_depends_on": "eval: !parent.use_spare_not_item;",
+   "options": "Item"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_billable",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is billable"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Qty",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Rate"
+  },
+  {
+   "depends_on": "eval: parent.use_spare_not_item",
+   "fieldname": "spare",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Spare",
+   "mandatory_depends_on": "eval: parent.use_spare_not_item",
+   "options": "Spare"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-11-17 22:28:54.620290",
+ "modified_by": "Administrator",
+ "module": "Service Management",
+ "name": "Job Card Items Supplied",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

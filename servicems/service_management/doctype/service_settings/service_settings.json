@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "creation": "2021-06-24 10:04:05.742941",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "default_is_billable",
+  "price_list",
+  "item_groups",
+  "use_spares_instead_of_item"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "default_is_billable",
+   "fieldtype": "Check",
+   "label": "Default is Billable"
+  },
+  {
+   "fieldname": "price_list",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Default Price List",
+   "options": "Price List",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item_groups",
+   "fieldtype": "Table MultiSelect",
+   "label": "Item Group for Parts and Consumable",
+   "options": "Part and Consumable Item Group"
+  },
+  {
+   "default": "0",
+   "fieldname": "use_spares_instead_of_item",
+   "fieldtype": "Check",
+   "label": "Use Spares instead of Item"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2022-11-17 21:30:13.119537",
+ "modified_by": "Administrator",
+ "module": "Service Management",
+ "name": "Service Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
